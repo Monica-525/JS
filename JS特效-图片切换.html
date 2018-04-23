@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 360px;
+            height: 70px;
+            border: 1px solid #000;
+            padding-top: 360px;
+            margin: 100px auto;
+            background: url(image/fbb3.jpg)  no-repeat;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        ul li img{
+            height: 70px;
+            width: 72px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li id="li01"><img src="image/fbb3.jpg" alt=""></li>
+        <li id="li02"><img src="image/fbb2.jpg" alt=""></li>
+        <li id="li03"><img src="image/fbb1.jpg" alt=""></li>
+        <li id="li04"><img src="image/fbb4.jpg" alt=""></li>
+        <li id="li05"><img src="image/fbb5.jpg" alt=""></li>
+    </ul>
+</div>
+<script>
+    /*window.onload = function () {
+        var li01 = document.getElementById('li01');
+        var li02 = document.getElementById('li02');
+        var li03 = document.getElementById('li03');
+        var li04 = document.getElementById('li04');
+        var li05 = document.getElementById('li05');
+        var box = document.getElementById('box');
+
+        li01.onmouseover = function () {
+            box.style.background = 'url(image/fbb3.jpg)  no-repeat'
+        };
+        li02.onmouseover = function () {
+            box.style.background = 'url(image/fbb2.jpg)  no-repeat'
+        };
+        li03.onmouseover = function () {
+            box.style.background = 'url(image/fbb1.jpg)  no-repeat'
+        };
+        li04.onmouseover = function () {
+            box.style.background = 'url(image/fbb4.jpg)  no-repeat'
+        };
+        li05.onmouseover = function () {
+            box.style.background = 'url(image/food.jpg)  no-repeat'
+        }
+    }*/
+
+
+
+
+
+    //封装---简化代码
+    /*window.onload = function () {
+        //根据id获取标签
+        function $(id) {
+            return typeof  id === "string" ? document.getElementById(id) : null;
+        }
+        //改变背景图片
+        function changeImage(liId, imgSrc) {
+            $(liId).onmouseover = function () {
+                $('box').style.background = imgSrc;
+            }
+        }
+        changeImage('li01','url(image/fbb3.jpg)  no-repeat');
+        changeImage('li02','url(image/fbb2.jpg)  no-repeat');
+        changeImage('li03','url(image/fbb1.jpg)  no-repeat');
+        changeImage('li04','url(image/fbb4.jpg)  no-repeat');
+        changeImage('li05','url(image/food.jpg)  no-repeat');
+    }*/
+
+
+
+
+
+
+
+    //另一种封装
+   /* window.onload = function () {
+        var box = document.getElementById('box');
+        var allLi = box.getElementsByTagName('li');
+        for(var i = 0; i <allLi.length; i++){
+            var sLi = allLi[i];
+            sLi.index = i + 1;
+            sLi.onmouseover = function () {
+                box.style.background = 'url("image/fbb' + this.index +'.jpg")  no-repeat';
+            }
+        }
+    }*/
+
+
+
+
+
+
+
+
+
+    //练习
+    window.onload = function () {
+        var box = document.getElementById('box');
+        var allLis = box.getElementsByTagName('LI');
+
+        for(var i = 0; i < allLis.length; i++){
+            var sLi = allLis[i];
+            sLi.index = i + 1;
+            sLi.onmouseover = function () {
+                box.style.background = 'url("image/fbb'+ this.index +'.jpg")  no-repeat';
+            }
+        }
+    }
+</script>
+</body>
+</html>
